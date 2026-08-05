@@ -1,0 +1,80 @@
+.booking {
+  padding: 7rem 0;
+  background-color: $color-bg;
+  position: relative;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr { border-bottom: 1px solid $color-line; }
+  tr:last-child { border-bottom: none; }
+
+  td {
+    padding: .95rem 0;
+    font-family: $font-mono;
+    font-size: .88rem;
+  }
+
+  .day {
+    color: $color-cream-soft;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+
+  .hour {
+    text-align: right;
+    color: $color-gold;
+  }
+
+  .closed { color: $color-oxblood-light; }
+}
+
+.contact-card {
+  background-color: $color-bg-alt;
+  border: 1px solid $color-line;
+  padding: 2.8rem 2.4rem;
+  height: 100%;
+}
+
+.contact-row {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid $color-line;
+
+  &:last-child { border-bottom: none; padding-bottom: 0; }
+  &:first-child { padding-top: 0; }
+
+  .contact-icon {
+    color: $color-gold;
+    flex-shrink: 0;
+    margin-top: .15rem;
+  }
+
+  .contact-label {
+    font-family: $font-mono;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $color-muted;
+    margin-bottom: .15rem;
+  }
+
+  .contact-value {
+    color: $color-cream-soft;
+    font-size: .95rem;
+  }
+}
+
+.map-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border: 1px solid $color-line;
+  filter: grayscale(60%) contrast(1.1) brightness(.85);
+  transition: filter .5s ease;
+
+  &:hover { filter: grayscale(0%) contrast(1) brightness(1); }
+}

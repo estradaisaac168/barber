@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json.log
+npm-debug.log*
+
+dist/css/*.map
+dist/js/*.map
+
+src/img/*.jpg
+src/img/*.jpeg
+src/img/*.png

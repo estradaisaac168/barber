@@ -1,0 +1,70 @@
+.site-footer {
+  padding: 3rem 0 2rem;
+  background-color: $color-bg;
+
+  .footer-brand {
+    font-family: $font-display;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: 1.2rem;
+    color: $color-cream;
+
+    span { color: $color-gold; }
+  }
+
+  .footer-links a {
+    color: $color-muted;
+    font-size: .85rem;
+    margin-left: 1.4rem;
+    transition: color .3s ease;
+
+    &:hover { color: $color-gold-light; }
+
+    @media (max-width: 575.98px) {
+      margin-left: 0;
+      margin-right: 1.4rem;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2.2rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid $color-line;
+    font-size: .78rem;
+    color: $color-muted;
+    font-family: $font-mono;
+  }
+
+  .social-icons a {
+    color: $color-cream-soft;
+    margin-left: 1rem;
+    transition: color .3s ease, transform .3s ease;
+    display: inline-block;
+
+    &:hover { color: $color-gold; transform: translateY(-3px); }
+  }
+}
+
+// --- Botón flotante WhatsApp -----------------------------------------
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 1060;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $color-gold;
+  color: $color-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), background-color .3s ease;
+
+  &:hover {
+    transform: scale(1.08) translateY(-2px);
+    background-color: $color-gold-light;
+    color: $color-bg;
+  }
+}

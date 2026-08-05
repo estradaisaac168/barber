@@ -1,0 +1,32 @@
+{
+  "name": "barber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass src/scss/main.scss dist/css/main.min.css --style=compressed",
+    "watch:css": "sass --watch src/scss/main.scss dist/css/main.min.css --style=compressed",
+    "build:js": "terser node_modules/bootstrap/dist/js/bootstrap.bundle.min.js src/js/main.js -o dist/js/main.min.js --compress --mangle",
+    "build:js-obfuscate": "javascript-obfuscator node_modules/bootstrap/dist/js/bootstrap.bundle.min.js src/js/main.js --output dist/js/main.min.js --compact true --control-flow-flattening true --string-array true --string-array-encoding base64",
+    "images": "imagemin \"src/img/*.{jpg,png}\" --out-dir=dist/img --plugin=mozjpeg --plugin=pngquant",
+    "images:webp": "imagemin \"src/img/*.{jpg,png}\" --out-dir=dist/img --plugin=webp",
+    "build": "npm run build:css && npm run build:js && npm run images",
+    "dev": "concurrently \"npm run watch:css\" \"npm run images\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-webp": "^8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4",
+    "terser": "^5.49.0"
+  }
+}

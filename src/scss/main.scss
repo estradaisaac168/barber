@@ -1,0 +1,17 @@
+// =======================================================
+// CASA NAVAJA — main.scss
+// Buenas prácticas: 7-1-lite (variables > bootstrap > partials)
+// =======================================================
+
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "base";
+@import "navbar";
+@import "hero";
+@import "services";
+@import "team";
+@import "gallery";
+@import "testimonials";
+@import "booking";
+@import "footer";

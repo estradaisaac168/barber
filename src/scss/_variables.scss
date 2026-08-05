@@ -1,0 +1,54 @@
+// =======================================================
+// CASA NAVAJA — Design Tokens
+// =======================================================
+
+// --- Paleta ---------------------------------------------------
+$color-bg:         #17130F; // espresso casi negro
+$color-bg-alt:      #211B15; // marrón cálido, tarjetas
+$color-bg-alt-2:    #2A2219; // marrón, hover
+$color-cream:       #F2E9D8; // texto principal
+$color-cream-soft:  #E7DBC4;
+$color-muted:       #A79885; // texto secundario
+$color-gold:        #C7973C; // latón / acento principal
+$color-gold-light:  #E0B563;
+$color-oxblood:     #7A2B26; // rojo vino, acento secundario
+$color-oxblood-light: #9C3A33;
+$color-line:        rgba(242, 233, 216, .12);
+
+// --- Tipografía -------------------------------------------------
+$font-display: 'Oswald', 'Arial Narrow', sans-serif;
+$font-body:    'Work Sans', system-ui, sans-serif;
+$font-mono:    'Space Mono', monospace;
+
+// --- Bootstrap overrides -----------------------------------------
+$body-bg:    $color-bg;
+$body-color: $color-cream-soft;
+
+$primary:    $color-gold;
+$secondary:  $color-oxblood;
+$dark:       $color-bg-alt;
+$light:      $color-cream;
+
+$font-family-base: $font-body;
+$font-family-sans-serif: $font-body;
+
+$link-color: $color-gold;
+$link-hover-color: $color-gold-light;
+$link-decoration: none;
+
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-pill: 50rem;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1240px
+);
+
+$grid-gutter-width: 2rem;
+
+$enable-negative-margins: true;

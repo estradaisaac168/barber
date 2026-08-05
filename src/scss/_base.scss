@@ -1,0 +1,165 @@
+// =======================================================
+// BASE
+// =======================================================
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  background-color: $color-bg;
+  overflow-x: hidden;
+  font-feature-settings: "liga" 1;
+}
+
+::selection {
+  background: $color-gold;
+  color: $color-bg;
+}
+
+// --- Scrollbar ---------------------------------------------------
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: $color-bg; }
+::-webkit-scrollbar-thumb {
+  background: $color-bg-alt-2;
+  border: 2px solid $color-bg;
+}
+
+// --- Tipografía general -------------------------------------------
+h1, h2, h3, h4, .display-font {
+  font-family: $font-display;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  font-weight: 600;
+  color: $color-cream;
+}
+
+.eyebrow {
+  font-family: $font-mono;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: $color-gold;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: $color-gold;
+    display: inline-block;
+  }
+}
+
+.text-muted-warm { color: $color-muted !important; }
+.text-gold { color: $color-gold !important; }
+.text-oxblood { color: $color-oxblood-light !important; }
+.bg-alt { background-color: $color-bg-alt; }
+
+hr.hr-line {
+  border: none;
+  border-top: 1px solid $color-line;
+  margin: 0;
+}
+
+// --- Patrón "poste de barbero" reutilizable como firma visual ------
+@keyframes pole-scroll {
+  from { background-position: 0 0; }
+  to   { background-position: 0 80px; }
+}
+
+.barber-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    $color-oxblood 0 14px,
+    $color-cream 14px 28px,
+    $color-gold 28px 42px
+  );
+  background-size: 100% 80px;
+}
+
+.barber-stripe--animated {
+  animation: pole-scroll 3.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barber-stripe--animated { animation: none; }
+}
+
+// --- Botones -------------------------------------------------------
+.btn {
+  font-family: $font-display;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .85rem;
+  padding: .85rem 1.9rem;
+  border-width: 1px;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.btn-gold {
+  background-color: $color-gold;
+  border-color: $color-gold;
+  color: $color-bg;
+
+  &:hover, &:focus {
+    background-color: $color-gold-light;
+    border-color: $color-gold-light;
+    color: $color-bg;
+    transform: translateY(-3px);
+  }
+}
+
+.btn-outline-cream {
+  background-color: transparent;
+  border-color: $color-line;
+  color: $color-cream;
+
+  &:hover, &:focus {
+    background-color: $color-cream;
+    border-color: $color-cream;
+    color: $color-bg;
+    transform: translateY(-3px);
+  }
+}
+
+.btn:focus-visible, a:focus-visible, button:focus-visible {
+  outline: 2px solid $color-gold;
+  outline-offset: 3px;
+}
+
+// --- Scroll reveal ---------------------------------------------------
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+// --- Indicador de progreso lateral (identidad visual) ---------------
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, $color-oxblood, $color-gold);
+  z-index: 1080;
+  transition: width .12s linear;
+}
+
+section {
+  position: relative;
+}

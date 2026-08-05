@@ -1,0 +1,77 @@
+.services {
+  padding: 7rem 0;
+  background-color: $color-bg;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .menu-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.65rem 0;
+    border-bottom: 1px solid $color-line;
+    transition: padding-left .35s cubic-bezier(.2,.8,.2,1);
+    cursor: default;
+
+    &:first-child { padding-top: 0; }
+
+    &:hover {
+      padding-left: .75rem;
+
+      .menu-item-name { color: $color-gold-light; }
+      .menu-item-name::before { opacity: 1; transform: translateX(0); }
+    }
+  }
+
+  .menu-item-name {
+    font-family: $font-display;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    font-size: 1.15rem;
+    color: $color-cream;
+    white-space: nowrap;
+    position: relative;
+    transition: color .3s ease;
+
+    &::before {
+      content: "—";
+      position: absolute;
+      left: -1.1rem;
+      color: $color-gold;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+  }
+
+  .menu-item-desc {
+    font-size: .86rem;
+    color: $color-muted;
+    margin-top: .2rem;
+  }
+
+  .menu-item-leader {
+    flex: 1;
+    border-bottom: 1px dotted $color-line;
+    transform: translateY(-.4rem);
+    min-width: 1.5rem;
+  }
+
+  .menu-item-price {
+    font-family: $font-mono;
+    font-size: 1.05rem;
+    color: $color-gold;
+    white-space: nowrap;
+  }
+}
+
+.service-note {
+  margin-top: 2.2rem;
+  font-size: .82rem;
+  color: $color-muted;
+  font-family: $font-mono;
+}
